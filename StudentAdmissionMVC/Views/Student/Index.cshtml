@@ -1,0 +1,40 @@
+﻿@using StudentAdmissionMVC.ViewModels
+@model List<StudentViewModel>
+
+<h1>Students</h1>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            @* <th>Stage Name</th>
+            <th>Standard Name</th> *@
+            <th>Student Email</th>
+            <th>Pysically Disabled</th>
+            <th>Gender</th>
+            <th>Date of Application</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.studentName</td>
+                @* <td>@student.standardStageViewModel.StageName</td>
+                <td>@student.standardViewModel.StandardName</td> *@
+                <td>@student.StudentEmail</td>
+                <td>@student.IsPhysicallyDisabled</td>
+                <td>@student.Gender</td>
+                <td>@student.dateOfApplication</td>
+                <td><a asp-action="Edit" asp-route-id="@student.studentId" class="btn btn-warning">Edit</a> | 
+                <a asp-action="Details" asp-route-id="@student.studentId" class="btn btn-secondary">Details</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Add</a>

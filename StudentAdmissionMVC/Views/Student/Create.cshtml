@@ -1,0 +1,156 @@
+﻿@using StudentAdmissionMVC.ViewModels
+@model StudentViewModel
+
+<h1>Add Student</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="StageId" class="control-label">Select Stage : </label>
+        <select asp-for="StageId" class="form-control"
+                asp-items="@(new SelectList(Model.Stages,"StageId", "StageName"))"></select>
+        <span asp-validation-for="StageId" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="StandardId" class="control-label">Select Standard : </label>
+        <select asp-for="StandardId" class="form-control">
+            <option value="1">Fifth</option>
+            <option value="2">Sixth</option>
+            <option value="3">Seventh</option>
+            <option value="4">Eighth</option>
+            <option value="5">Ninth</option>
+            <option value="6">Tenth</option>
+            <option value="7">Eleventh</option>
+            <option value="8">Twelth</option>
+
+        </select>
+        <span asp-validation-for="StandardId" class="text-danger"></span>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <label asp-for="studentName" class="control-label"></label>
+        <input asp-for="studentName" class="form-control" />
+        <span asp-validation-for="studentName" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="StudentEmail" class="control-label"></label>
+        <input asp-for="StudentEmail" class="form-control" />
+        <span asp-validation-for="StudentEmail" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="IsPhysicallyDisabled" class="control-label">Physically Disabled : </label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="IsPhysicallyDisabled" value="true" id="disabledTrue" />
+            <label class="form-check-label" for="disabledTrue">Yes</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="IsPhysicallyDisabled" value="false" id="disabledFalse" />
+            <label class="form-check-label" for="disabledFalse">No</label>
+        </div>
+        <span asp-validation-for="IsPhysicallyDisabled" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="Gender" class="control-label"></label>
+        <input asp-for="Gender" class="form-control" />
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="dateOfApplication" class="control-label"></label>
+        <input asp-for="dateOfApplication" class="form-control" />
+        <span asp-validation-for="dateOfApplication" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="File" class="control-label"></label>
+        <input asp-for="File" type="file" class="form-control" />
+        <span asp-validation-for="File" class=" text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="maths" class="control-label"></label>
+        <input asp-for="maths" class="form-control" />
+        <span asp-validation-for="maths" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="Science" class="control-label"></label>
+        <input asp-for="Science" class="form-control" />
+        <span asp-validation-for="Science" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="SocialStudies" class="control-label"></label>
+        <input asp-for="SocialStudies" class="form-control" />
+        <span asp-validation-for="SocialStudies" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="Hindi" class="control-label"></label>
+        <input asp-for="Hindi" class="form-control" />
+        <span asp-validation-for="Hindi" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="English" class="control-label"></label>
+        <input asp-for="English" class="form-control" />
+        <span asp-validation-for="English" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="Chemistry" class="control-label"></label>
+        <input asp-for="Chemistry" class="form-control" />
+        <span asp-validation-for="Chemistry" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="Biology" class="control-label"></label>
+        <input asp-for="Biology" class="form-control" />
+        <span asp-validation-for="Biology" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label asp-for="Physics" class="control-label"></label>
+        <input asp-for="Physics" class="form-control" />
+        <span asp-validation-for="Physics" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-default">Cancel</a>
+    </div>
+</form>
+
+
+
+
+
+
+@* @section scripts {
+    <script>
+        $(document).ready(function () {
+            $("stage").change(function () {
+                var stageId = $(this).val();
+                $.ajax({
+                    url: "",
+                    typeof: "POST",
+                    data: { stageId: stageId },
+                    success: function (data) {
+                        $("standard").empty();
+                        $.each(data, function (index, standard) {
+                            $("standard").append($('<option>', {
+                                value: standard.id,
+                                text: standard.name
+                            }));
+                        });
+                    }
+                });
+            });
+            
+        });
+    </script>
+} *@

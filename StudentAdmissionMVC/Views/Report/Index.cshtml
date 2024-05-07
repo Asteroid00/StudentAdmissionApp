@@ -1,0 +1,25 @@
+﻿@using StudentAdmissionMVC.ViewModels
+@model List<ReportViewModel>
+
+<h1>Admission Report</h1>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Stage</th>
+            <th>Standard</th>
+            <th>Total Students</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.stageName</td>
+                <td>@student.standardName</td>
+                <td>@student.totalStudent</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

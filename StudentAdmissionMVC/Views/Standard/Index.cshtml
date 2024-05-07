@@ -1,0 +1,30 @@
+﻿@using StudentAdmissionMVC.ViewModels
+@model List<StandardViewModel>
+
+<h1>Standards</h1>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Stage Name</th>
+            <th>Stage Description</th>
+            <th>Standard Name</th>
+            <th>Teacher Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var standard in Model)
+        {
+            <tr>
+                <td>@standard.Stage.StageName</td>
+                <td>@standard.Stage.StageDescription</td>
+                <td>@standard.StandardName</td>
+                <td>@standard.TeacherName</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
